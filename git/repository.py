@@ -63,7 +63,7 @@ class Repository(ref_container.RefContainer):
     def _executeGitCommand(self, command, cwd=None):
         if cwd is None:
             cwd = self._getWorkingDirectory()
-        command = str(command)
+        command = unicode(command)
         self._logGitCommand(command, cwd)
         returned = subprocess.Popen(command,
                                     shell=True,
